@@ -1,0 +1,28 @@
+.main-about {
+    position: relative;
+    background-color: grey;
+    height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    width: 90%; 
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+}
+.card img {
+    width: 100%; 
+    max-width: 500px; 
+    height: 500px;
+    object-fit: cover; 
+}
+@media (max-width:1120px) {
+   
+}

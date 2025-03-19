@@ -4,6 +4,7 @@ html{
   --color2: #895cfb;
 }
 #about {
+    position: relative;
     padding: 100px 0;
     background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
   }

@@ -1,4 +1,4 @@
-.main-about {
+.main-event {
     position: relative;
     background-color: grey;
     height: 100vh;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.about {
+.event {
     width: 90%; 
 }
 

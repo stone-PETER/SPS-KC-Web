@@ -61,8 +61,8 @@ export default function Event() {
     };
 
     return (
-        <section className="main-about"> 
-         <div className="about">
+        <section className="main-event"> 
+         <div className="event">
             <Slider {...settings}>
                 {cards.map((card, index) => (
                     <div key={index} className="card">

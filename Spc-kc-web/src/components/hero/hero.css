@@ -1,0 +1,47 @@
+.main-hero
+{
+    position: sticky;
+    top: 0;
+    background: black;
+}
+.hero 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("./src/assets/img/IEEE-SPS-EXECOM-1-scaled.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+.hero .content
+{
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+}
+.hero .content h1
+{
+    font-size: 8.5rem;
+    color: #61CE70;
+}
+.hero .content h3
+{
+    color: white;
+    font-size: 3.5rem;
+}

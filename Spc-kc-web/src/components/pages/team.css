@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 .team
 {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: white;
     color: black;
     display: flex;
@@ -18,7 +19,13 @@
 }
 .slt h1
 {
+    font-family: "Outfit", sans-serif;
     font-size: 64px;
+}
+.slt span
+{
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
 }
 .types
 {
@@ -30,6 +37,13 @@
 .types h3
 {
     font-size: 32px;
+    font-family: "Outfit", sans-serif;
+    padding: 0 10px 0 10px;
+}
+.types h3:hover
+{
+    background-color: #001E40;
+    color: #ffff;
 }
 .members
 {

@@ -28,10 +28,11 @@ export default function Hero() {
     <section className="main-hero">
       <div className="hero" ref={heroRef}>
         <div className="content">
-          <h1>IEEE</h1>
-          <h3>SPS Kerala Chapter</h3>
+          <h1>IEEE<span>SPS Kerala Chapter</span></h1>
+          <p>The Signal Processing Society, founded as IEEE’s first society in 1948</p>
         </div>
       </div>
+     
     </section>
   );
 }

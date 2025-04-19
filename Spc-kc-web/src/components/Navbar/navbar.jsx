@@ -4,7 +4,7 @@ export default function Navbar(){
     return(
         <nav className="navbar">
         <nav className="navbar">
-            <div className="logo"> <a href="index.html"></a></div>
+            <div className="logo"> <a href="index.html"><img src="./src/assets/img/spslogo.png" alt="" /></a></div>
             <div className="menu-icon" id="menu-icon">
                 <div className="bar"></div>
                 <div className="bar"></div>               

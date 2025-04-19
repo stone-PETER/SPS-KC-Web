@@ -3,8 +3,13 @@ import "./about.css";
 const About = () => {
   return (
     <div id="about" className="about">
+       <div class="divider">
+       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+       </svg>
+     </div>
       <div className="container">
-        <div className="row">
+        <div className="row">     
           <img src="img/logo/sps kc png.png" alt="" id="sps"/>
           <div className>
             <div className="about-text">

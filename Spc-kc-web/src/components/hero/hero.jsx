@@ -30,7 +30,6 @@ export default function Hero() {
         <div className="content">
           <h1>IEEE</h1>
           <h3>SPS Kerala Chapter</h3>
-          <a href="">About us</a>
         </div>
       </div>
     </section>

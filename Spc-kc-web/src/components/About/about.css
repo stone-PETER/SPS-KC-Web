@@ -1,13 +1,28 @@
 html{
-  --color1: #29004e;
+  --color1: #007A78;
   --color3: #5ca9fb;
-  --color2: #895cfb;
+  --color2: #000202;
 }
 #about {
     position: relative;
     padding: 100px 0;
-    background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
-  }
+    background: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about .row {
+  background-color: #001E40;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 50%;
+  padding: 30px;
+  width: 100%;
+  margin: 10px;
+}
+  
   #about h3 {
     font-size: 22px;
     margin: 0 0 20px;

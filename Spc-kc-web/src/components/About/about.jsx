@@ -8,7 +8,7 @@ const About = () => {
         <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
        </svg>
      </div>
-      <div className="container">
+      <div className="container p-10">
         <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6">
           <img src="img/logo/sps kc png.png" alt="" id="sps" className="w-8/10 md:w-1/3 md:w-1/3 object-contain"/>
           <div className>

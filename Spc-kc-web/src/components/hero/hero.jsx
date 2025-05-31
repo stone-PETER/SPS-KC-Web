@@ -18,21 +18,25 @@ export default function Hero() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <section className="main-hero">
+    <section id="hero" className="main-hero">
       <div className="hero" ref={heroRef}>
         <div className="content">
-          <h1>IEEE<span>SPS Kerala Chapter</span></h1>
-          <p>The Signal Processing Society, founded as IEEE’s first society in 1948</p>
+          <h1>
+            IEEE<span>SPS Kerala Chapter</span>
+          </h1>
+          <p>
+            The Signal Processing Society, founded as IEEE’s first society in
+            1948
+          </p>
         </div>
       </div>
-     
     </section>
   );
 }

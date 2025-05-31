@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="logo">
           {" "}
           <a href="index.html">
-            <img src="./src/assets/img/spslogo.png" alt="" />
+            <img src="img/logo/sps kc png.png" alt="" />
           </a>
         </div>
         <div className="menu-icon" id="menu-icon">

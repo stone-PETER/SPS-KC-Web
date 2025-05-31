@@ -4,74 +4,74 @@ import { useState } from "react";
 import Navbar from "../Navbar/navbar";
 let stud=[
    {
-    image :"./src/assets/img/team/image.png",
+    image :"img/team/image.png",
     h3 : "Samuel John",
     p : "Student representative"
    },
 
    {
-    image :"./src/assets/img/team/image.png",
+    image :"img/team/image.png",
     h3 : "Samuel John",
     p : "Student representative"
    },
 
    {
-    image :"./src/assets/img/team/image.png",
+    image :"img/team/image.png",
     h3 : "Samuel John",
     p : "Student representative"
    },
 
    {
-    image :"./src/assets/img/team/image.png",
+    image :"img/team/image.png",
     h3 : "Samuel John",
     p : "Student representative"
    },
 
    {
-    image :"./src/assets/img/team/image.png",
+    image :"img/team/image.png",
     h3 : "Samuel John",
     p : "Student representative"
    },
 ]
 let prof=[
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },
 
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },
 
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },
 
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },
 
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },
 
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },
 
     {
-        image :"./src/assets/img/team/random1.png",
+        image :"img/team/random1.png",
         h3 : "John Doe",
         p : "Coordinator"
     },

@@ -51,6 +51,8 @@ html{
     position: relative;
     margin-bottom: 15px;
     padding-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
   #about h2::after {
     position: absolute;

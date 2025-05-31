@@ -13,7 +13,7 @@
     align-items: center;
     height: 85vh;
     width: 100%;
-    background-image: url("./src/assets/img/IEEE-SPS-EXECOM-1-scaled.jpeg");
+    background-image: url("img/IEEE-SPS-EXECOM-1-scaled.jpeg");
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.7); /* translucent black */
     background-blend-mode: overlay;

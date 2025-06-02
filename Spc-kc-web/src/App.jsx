@@ -6,6 +6,7 @@ import About from "./components/About/about";
 import Hero from "./components/hero/hero"
 import Navbar from "./components/Navbar/navbar";
 import Team from "./components/pages/team";
+import Footer from "./components/footer/footer";
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
             <Hero />
             <About />
             <Event />
+            <Footer />
           </>
         } />
         <Route path="/team" element={<Team />} />

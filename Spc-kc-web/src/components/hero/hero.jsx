@@ -35,6 +35,7 @@ export default function Hero() {
             The Signal Processing Society, founded as IEEE’s first society in
             1948
           </p>
+          <button className="join-btn">Join Now</button>
         </div>
       </div>
     </section>

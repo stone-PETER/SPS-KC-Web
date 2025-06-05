@@ -11,7 +11,7 @@ const About = () => {
     </svg>
      </div>
       <div className="container p-10">
-        <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6">
+        <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6 ">
           <img src="img/logo/sps kc png.png" alt="" id="sps" className="w-8/10 md:w-1/3 md:w-1/3 object-contain"/>
           <div className>
             <div className="about-text">
@@ -22,7 +22,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6">
+        <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6 ">
           <img src="img/logo/humtn logo png.png" alt="" className="w-8/10 md:w-1/3 md:w-1/3 object-contain"/>
           <div className>
             <div className="about-text">

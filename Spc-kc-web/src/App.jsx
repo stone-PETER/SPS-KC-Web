@@ -1,6 +1,7 @@
 import "./App.css";
 import Event from "./components/Event/event";
-import Execom from "./components/Execom/execom";
+import Team24 from "./components/Execom/team24";
+import Team23 from "./components/Execom/team23";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./components/About/about";
 import Hero from "./components/hero/hero"
@@ -21,7 +22,9 @@ function App() {
           </>
         } />
         <Route path="/team" element={<Team />} />
-        <Route path="/execom" element={<Execom />} />
+        <Route path="/execom-23" element={<Team23 />} />
+        <Route path="/execom-24" element={<Team24 />} />
+
       </Routes>
     </Router>
   );

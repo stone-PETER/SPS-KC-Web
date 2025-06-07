@@ -1,0 +1,14 @@
+# Ignore media library export folders
+media_library_export-ieee_sps_kerala-*/
+
+# Node modules and build output (common for JS/TS projects)
+node_modules/
+dist/
+build/
+
+# Mac/Windows system files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/

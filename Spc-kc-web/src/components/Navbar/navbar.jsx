@@ -32,7 +32,7 @@ export default function Navbar() {
           </div>
         </li>
         <li>
-          <a href="/events">Events</a>
+          <Link to="/events">Events</Link>
         </li>
       </ul>
     </nav>

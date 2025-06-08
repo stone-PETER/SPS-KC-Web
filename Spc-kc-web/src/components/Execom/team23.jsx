@@ -1,66 +1,137 @@
 import React, { useEffect, useState } from "react";
-import sanityClient from "@sanity/client";
+import { client } from "../../sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { ROLE_PRIORITY, sortByRolePriority } from "./rolePriority";
 
-const client = sanityClient({
-  projectId: "bvy9q97t", // Replace with your Sanity project ID
-  dataset: "production", // Replace with your dataset name
-  useCdn: true,
-  apiVersion: "2023-01-01",
-});
+const { projectId, dataset } = client.config();
+const urlFor = (source) =>
+  projectId && dataset
+    ? imageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
 
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
-  return builder.image(source);
-}
+const OFFICE_BEARERS_QUERY = `*[_type == "officeBearer" && year == 2023 && defined(image.asset)]{
+  _id,
+  image,
+  professional,
+  role
+}`;
 
-const Execom = () => {
+export default function Team23() {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "officeBearer" && year == 2023]{
-        _id,
-        name,
-        photo
-      }`
-      )
-      .then((data) => {
+    async function fetchData() {
+      try {
+        const data = await client.fetch(OFFICE_BEARERS_QUERY);
         setMembers(data);
+      } catch (err) {
+        console.error("Sanity fetch error:", err);
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+    fetchData();
   }, []);
 
   if (loading) return <div className="text-center p-8">Loading...</div>;
 
-  return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">
-        Office Bearers 2024
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {members.map((member) => (
-          <div
-            key={member._id}
-            className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center"
-          >
-            {member.photo ? (
-              <img
-                src={urlFor(member.photo).width(200).height(200).url()}
-                alt={member.name}
-                className="w-24 h-24 rounded-full object-cover mb-4"
-              />
-            ) : (
-              <div className="w-24 h-24 rounded-full bg-gray-200 mb-4" />
-            )}
-            <p className="text-lg font-medium text-gray-700">{member.name}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+  // Debug: log the values of professional for all members
+  console.log(
+    "All members:",
+    members.map((m) => ({
+      id: m._id,
+      professional: m.professional,
+      type: typeof m.professional,
+    }))
   );
-};
 
-export default Execom;
+  // Split into professionals and non-professionals (robust for boolean or string values)
+  const professionals = sortByRolePriority(
+    members.filter((m) => m.professional === true || m.professional === "true")
+  );
+  const nonProfessionals = sortByRolePriority(
+    members.filter(
+      (m) => m.professional === false || m.professional === "false"
+    )
+  );
+
+  return (
+    <main className="container mx-auto p-8">
+      <h2 className="text-2xl font-bold mb-4">Professionals</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "2rem",
+        }}
+      >
+        {professionals.map((member) => {
+          const imageUrl =
+            member.image && member.image.asset
+              ? urlFor(member.image).url()
+              : null;
+          return (
+            <div
+              key={member._id}
+              style={{
+                borderRadius: "12px",
+                textAlign: "center",
+              }}
+            >
+              {imageUrl && (
+                <img
+                  src={imageUrl}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <h2 className="text-2xl font-bold mb-4 mt-12">Non-Professionals</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "2rem",
+        }}
+      >
+        {nonProfessionals.map((member) => {
+          const imageUrl =
+            member.image && member.image.asset
+              ? urlFor(member.image).url()
+              : null;
+          return (
+            <div
+              key={member._id}
+              style={{
+                borderRadius: "12px",
+                textAlign: "center",
+              }}
+            >
+              {imageUrl && (
+                <img
+                  src={imageUrl}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </main>
+  );
+}

@@ -8,6 +8,8 @@ import Hero from "./components/hero/hero"
 import Navbar from "./components/Navbar/navbar";
 import Team from "./components/pages/team";
 import Footer from "./components/footer/footer";
+import AllEvents from "./components/Event/allEvents";
+import Newsletter from "./components/Newsletter/newsletter";
 function App() {
   return (
     <Router>
@@ -24,6 +26,9 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/execom-23" element={<Team23 />} />
         <Route path="/execom-24" element={<Team24 />} />
+        <Route path="/events" element={<AllEvents />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+
 
       </Routes>
     </Router>

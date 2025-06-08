@@ -35,7 +35,14 @@ export default function Hero() {
             The Signal Processing Society, founded as IEEE’s first society in
             1948
           </p>
-          <button className="join-btn">Join Now</button>
+          <button className="join-btn">
+            <a
+              href="https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=MEMSP001&refProd=MEMSP001"
+              target="_blank"
+            >
+              Join Now
+            </a>
+          </button>
         </div>
       </div>
     </section>

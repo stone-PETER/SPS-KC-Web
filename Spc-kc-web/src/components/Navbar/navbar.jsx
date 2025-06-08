@@ -1,6 +1,23 @@
+import React, { useEffect } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+
 export default function Navbar() {
+  useEffect(() => {
+    const menuIcon = document.getElementById("menu-icon");
+    const navLinks = document.getElementById("nav-links");
+    if (menuIcon && navLinks) {
+      menuIcon.onclick = () => {
+        navLinks.style.display =
+          navLinks.style.display === "flex" ? "" : "flex";
+      };
+    }
+    // Cleanup
+    return () => {
+      if (menuIcon) menuIcon.onclick = null;
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="logo">

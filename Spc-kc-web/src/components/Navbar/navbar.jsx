@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <a href="index.html">
-          <img src="img/logo/sps kc png.png" alt="" />
+          <img src="/img/logo/sps kc png.png" alt="logo" />
         </a>
       </div>
       <div className="menu-icon" id="menu-icon">

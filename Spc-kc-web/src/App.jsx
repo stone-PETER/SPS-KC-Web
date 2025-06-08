@@ -10,6 +10,7 @@ import Team from "./components/pages/team";
 import Footer from "./components/footer/footer";
 import AllEvents from "./components/Event/allEvents";
 import Newsletter from "./components/Newsletter/newsletter";
+import Team25 from "./components/Execom/team25";
 function App() {
   return (
     <Router>
@@ -23,7 +24,7 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/team" element={<Team />} />
+        <Route path="/team" element={<Team25 />} />
         <Route path="/execom-23" element={<Team23 />} />
         <Route path="/execom-24" element={<Team24 />} />
         <Route path="/events" element={<AllEvents />} />

@@ -63,13 +63,13 @@
         display: none; 
         flex-direction: column;
         width: 100%;
-        background-color: #575655;
+        background-color: #000f2ac2;
         position: absolute;
+        z-index: 1000;
         top: 90px; 
         padding: 10px 0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
     .navbar .nav-links.active {
         display: flex; 
     }

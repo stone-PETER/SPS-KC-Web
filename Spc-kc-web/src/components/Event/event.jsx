@@ -2,7 +2,7 @@ import "./event.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+//maybe change to 5 most recent events
 const cards = [
   {
     img: "img/events/WhatsApp-Image-2023-10-24-at-7.01.06-PM-qec7o4oryuf1bff4wba8p5haj5a93d1y40p5s4czfc.jpeg",

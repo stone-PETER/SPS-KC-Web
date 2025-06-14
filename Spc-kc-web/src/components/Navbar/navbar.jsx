@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="index.html">
+        <a href="/">
           <img src="/img/logo/sps kc png.png" alt="logo" />
         </a>
       </div>
@@ -46,6 +46,8 @@ export default function Navbar() {
             <Link to="/team">Present Office Bearers</Link>
             <Link to="/execom-24">Office Bearers 2024</Link>
             <Link to="/execom-23">Office Bearers 2023</Link>
+            <Link to="/execom-22">Office Bearers 2022</Link>
+            <Link to="/execom-21">Office Bearers 2021</Link>
           </div>
         </li>
         <li>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Navbar/navbar";
 import { client } from "../../sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { ROLE_PRIORITY, sortByRolePriority } from "./rolePriority";
@@ -39,7 +38,7 @@ export default function Team22() {
   }, []);
 
   if (loading) {
-    return <div className="team"><div className="slt"><h1>Loading...</h1></div></div>;
+    return <div className="text-center p-8">Loading...</div>;
   }
 
   // Split and sort
@@ -63,16 +62,34 @@ export default function Team22() {
       </div>
     ));
   } else if (items === 1) {
-    content = professionals.map((item, index) => (
-      <div className="mem" key={item._id || index}>
-        <img
-          src={item.image && item.image.asset ? urlFor(item.image).url() : "/img/team/random1.png"}
-          alt="team member"
-        />
-        <h3>{item.title}</h3>
-        <p>{item.role}</p>
-      </div>
-    ));
+     content=professionals.map((member) => {
+          const imageUrl =
+            member.image && member.image.asset
+              ? urlFor(member.image).url()
+              : null;
+          return (
+            <div
+              key={member._id}
+              style={{
+                borderRadius: "12px",
+                textAlign: "center",
+              }}
+            >
+              {imageUrl && (
+                <img
+                  src={imageUrl}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              )}
+            </div>
+          );
+        });
   }
 
   return (

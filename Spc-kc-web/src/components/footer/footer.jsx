@@ -1,6 +1,12 @@
 import React from "react";
 import "./footer.css";
 import { Link } from "react-router-dom";
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 
 const Footer = () => {
   return (
@@ -9,16 +15,29 @@ const Footer = () => {
         <div className="contacts">
           <div className="col">
             <img src="img/logo/sps kc png.png" alt="" />
+            <div className="icons">
+              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faLinkedin} />
+            </div>
           </div>
             <ul className="main-links">
+              <li style={{ fontWeight: 400, marginBottom: 20 }}>Company</li>
               <li><a href="/">Home</a> </li>
                 <li><a href="/#about">About</a> </li>
                 <li><Link to="/events">Events</Link> </li>
             </ul>
             <ul className="other-links">
-                <li style={{ fontWeight: 400 }}>Other Links</li>
+                <li style={{ fontWeight: 400, marginBottom: 20 }}>Other Links</li>
                 <li><a href="https://www.ieee.org/">IEEE</a></li>
                 <li><a href="https://signalprocessingsociety.org/">Signal Processing Society</a></li>
+            </ul>
+            <ul className="contact">
+              <li style={{ fontWeight: 400, marginBottom: 20 }}>Company</li>
+              <li>ieeekerala@gmail.com</li>
+              <li>8848905673</li>
+              <li><p>HarmonIEEE, 1st Floor,<br />Cherian’s Square,<br /> Ambujavilasam Rd, PB77, GPO,<br />Thiruvananthapuram,<br /> Kerala 695001</p></li>
+              <li></li>
             </ul>
         </div>
         <div className="main-footer">

@@ -34,8 +34,8 @@ const Footer = () => {
             </ul>
             <ul className="contact">
               <li style={{ fontWeight: 400, marginBottom: 20 }}>Company</li>
-              <li>ieeekerala@gmail.com</li>
-              <li>8848905673</li>
+              <li>ieeespskerala@gmail.com</li>
+              <li>+91 80756 13378</li>
               <li><p>HarmonIEEE, 1st Floor,<br />Cherian’s Square,<br /> Ambujavilasam Rd, PB77, GPO,<br />Thiruvananthapuram,<br /> Kerala 695001</p></li>
               <li></li>
             </ul>

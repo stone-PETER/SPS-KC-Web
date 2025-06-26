@@ -46,7 +46,9 @@ export default function Team22() {
     members.filter((m) => m.professional === true || m.professional === "true")
   );
   const students = sortByRolePriority(
-    members.filter((m) => m.professional === false || m.professional === "false")
+    members.filter(
+      (m) => m.professional === false || m.professional === "false"
+    )
   );
 
   let content;
@@ -54,7 +56,11 @@ export default function Team22() {
     content = students.map((item, index) => (
       <div className="mem" key={item._id || index}>
         <img
-          src={item.image && item.image.asset ? urlFor(item.image).url() : "/img/team/image.png"}
+          src={
+            item.image && item.image.asset
+              ? urlFor(item.image).url()
+              : "/img/team/image.png"
+          }
           alt="team member"
         />
         <h3>{item.title}</h3>
@@ -62,55 +68,65 @@ export default function Team22() {
       </div>
     ));
   } else if (items === 1) {
-     content=professionals.map((member) => {
-          const imageUrl =
-            member.image && member.image.asset
-              ? urlFor(member.image).url()
-              : null;
-          return (
-            <div
-              key={member._id}
+    content = professionals.map((member) => {
+      const imageUrl =
+        member.image && member.image.asset ? urlFor(member.image).url() : null;
+      return (
+        <div
+          key={member._id}
+          style={{
+            borderRadius: "12px",
+            textAlign: "center",
+          }}
+        >
+          {imageUrl && (
+            <img
+              src={imageUrl}
+              alt=""
               style={{
                 borderRadius: "12px",
-                textAlign: "center",
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
               }}
-            >
-              {imageUrl && (
-                <img
-                  src={imageUrl}
-                  alt=""
-                  style={{
-                    borderRadius: "12px",
-                    width: "100%",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              )}
-            </div>
-          );
-        });
+            />
+          )}
+        </div>
+      );
+    });
   }
 
   return (
     <div className="team">
       <div className="slt">
-        <h1><span>Meet the</span> Team</h1>
+        <h1 style={{ fontSize: "2.75rem" }}>
+          <span>Meet the</span> Team
+        </h1>
         <div className="types">
           <button onClick={() => setItems(0)}>
-            <h3 style={{ backgroundColor: items === 0 ? "#001E40" : "#ffff", color: items === 0 ? "#ffff" : "black" }}>
+            <h3
+              style={{
+                backgroundColor: items === 0 ? "#001E40" : "#ffff",
+                color: items === 0 ? "#ffff" : "black",
+                fontSize: "2rem",
+              }}
+            >
               Student Team
             </h3>
           </button>
           <button onClick={() => setItems(1)}>
-            <h3 style={{ backgroundColor: items === 1 ? "#001E40" : "#ffff", color: items === 1 ? "#ffff" : "black" }}>
-              Profesional body
+            <h3
+              style={{
+                backgroundColor: items === 1 ? "#001E40" : "#ffff",
+                color: items === 1 ? "#ffff" : "black",
+                fontSize: "2rem",
+              }}
+            >
+              <span className="text-center text-black">Professional body</span>
             </h3>
           </button>
         </div>
-        <div className="members">
-          {content}
-        </div>
+        <div className="members">{content}</div>
       </div>
     </div>
   );

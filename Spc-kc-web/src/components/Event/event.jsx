@@ -1,30 +1,41 @@
+import React, { useEffect, useState } from "react";
 import "./event.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-//maybe change to 5 most recent events
-const cards = [
-  {
-    img: "img/events/WhatsApp-Image-2023-10-24-at-7.01.06-PM-qec7o4oryuf1bff4wba8p5haj5a93d1y40p5s4czfc.jpeg",
-  },
-  {
-    img: "img/events/WhatsApp-Image-2023-11-16-at-19.01.38_e5ec5b19-qfhyywbvwkxiiew2ay5dnywp9yrlkjt731t41fx9p4.jpg",
-  },
-  {
-    img: "img/events/WhatsApp-Image-2023-11-17-at-17.48.42_e4b128f8-qfhyyx9q3eysu0up5gk08go5vcmys8wxf6glipvviw.jpg",
-  },
-  {
-    img: "img/events/WhatsApp-Image-2024-07-11-at-4.32.30-PM-qr28dlnch54oets8xuusdeo0d8mctszkmx3frbejq0.jpeg",
-  },
-  {
-    img: "img/events/WhatsApp-Image-2023-11-16-at-19.01.38_e5ec5b19-qfhyywbvwkxiiew2ay5dnywp9yrlkjt731t41fx9p4.jpg",
-  },
-  {
-    img: "img/events/WhatsApp-Image-2024-07-11-at-4.32.30-PM-qr28dlnch54oets8xuusdeo0d8mctszkmx3frbejq0.jpeg",
-  },
-];
+import { client } from "../../sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
+
+const { projectId, dataset } = client.config();
+const urlFor = (source) =>
+  projectId && dataset
+    ? imageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
+
+const EVENTS_QUERY = `*[_type == "event" && defined(image.asset)]|order(date desc)[0...5]{
+  _id,
+  image,
+  date
+}`;
 
 export default function Event() {
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await client.fetch(EVENTS_QUERY);
+        setEvents(data);
+      } catch (err) {
+        console.error("Sanity fetch error:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -60,18 +71,28 @@ export default function Event() {
     ],
   };
 
+  if (loading) return <div className="text-center p-8">Loading...</div>;
+
   return (
     <section className="main-event">
       <h1 className="event-title">Events</h1>
       <div className="event">
         <Slider {...settings}>
-          {cards.map((card, index) => (
-            <div key={index} className="card">
-              <div className="card-body">
-                <img src={card.img} alt={`Slide ${index + 1}`} />
+          {events.map((event, index) => {
+            const imageUrl =
+              event.image && event.image.asset
+                ? urlFor(event.image).url()
+                : null;
+            return (
+              <div key={event._id || index} className="card">
+                <div className="card-body">
+                  {imageUrl && (
+                    <img src={imageUrl} alt={`Event ${index + 1}`} />
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </Slider>
       </div>
     </section>

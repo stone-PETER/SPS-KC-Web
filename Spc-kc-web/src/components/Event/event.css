@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("img/eventsBg.png");
+  background: url("/img/eventsBg.png");
 }
 .event {
   width: 90%;

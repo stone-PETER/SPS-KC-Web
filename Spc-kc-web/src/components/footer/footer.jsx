@@ -15,11 +15,18 @@ const Footer = () => {
         <div className="contacts">
           <div className="col">
             <img src="img/logo/sps kc png.png" alt="" />
-            <div className="icons">
-              <FontAwesomeIcon icon={faFacebook} />
-              <FontAwesomeIcon icon={faInstagram} />
-              <FontAwesomeIcon icon={faLinkedin} />
-            </div>
+            <div className="icons flex gap-4">
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faFacebook} className="text-2xl" />
+  </a>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
+  </a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
+  </a>
+</div>
+
           </div>
             <ul className="main-links">
               <li style={{ fontWeight: 400, marginBottom: 20 }}>Company</li>

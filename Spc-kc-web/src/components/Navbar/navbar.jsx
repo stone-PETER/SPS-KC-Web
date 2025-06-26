@@ -53,6 +53,9 @@ export default function Navbar() {
         <li>
           <Link to="/events">Events</Link>
         </li>
+        <li>
+          <Link to="/sbc">SBC</Link>
+        </li>
       </ul>
     </nav>
   );

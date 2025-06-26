@@ -58,7 +58,9 @@ export default function Team21() {
 
   return (
     <main className="container mx-auto p-8">
-      <h2 className="text-2xl font-bold mb-4">Professionals</h2>
+      <h2 className="text-2xl text-center text-black font-bold mb-4">
+        Professionals
+      </h2>
       <div
         style={{
           display: "grid",
@@ -95,7 +97,9 @@ export default function Team21() {
           );
         })}
       </div>
-      <h2 className="text-2xl font-bold mb-4 mt-12">Non-Professionals</h2>
+      <h2 className="text-2xl text-center text-black font-bold mb-4 mt-12">
+        Student Team
+      </h2>
       <div
         style={{
           display: "grid",

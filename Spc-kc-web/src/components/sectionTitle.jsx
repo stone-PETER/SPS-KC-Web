@@ -14,9 +14,9 @@ export default function SectionTitle({ title, subtitle, className = "" }) {
           {subtitle}
         </div>
       )}
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
+      <h1 className="text-2xl capitalize md:text-5xl font-bold text-gray-900 mb-2">
         {title}
-      </h2>
+      </h1>
       <div className="w-16 h-1 mx-auto bg-blue-600 rounded mb-2" />
     </div>
   );

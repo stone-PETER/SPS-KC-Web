@@ -1,5 +1,6 @@
 import React from "react";
 import "./about.css";
+import SectionTitle from "../sectionTitle";
 const About = () => {
   return (
     <div id="about" className="about">
@@ -27,6 +28,7 @@ const About = () => {
         </svg>
       </div>
       <div className="container p-10">
+        <SectionTitle title="About" />
         <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6 ">
           <img
             src="img/logo/sps.png"
@@ -56,7 +58,7 @@ const About = () => {
           />
           <div className>
             <div className="about-text">
-              <h2>IEEE SPS Kerala Chapter</h2>
+              <h2>IEEE SPS KC</h2>
               <p>
                 The IEEE Signal Processing Society (SPS) Kerala Chapter is a
                 lively, close-knit community, honored globally as the Best
@@ -77,7 +79,7 @@ const About = () => {
                 we are building a network that reaches from the grassroots of
                 Kerala to the world. Our chapter is more than a community—it’s a
                 place where ideas flourish, people engage, and every endeavor
-                holds a lasting purpose. Yes, that’s what we are: a family.
+                holds a lasting purpose. Yes, that’s what we are: a family.
               </p>
             </div>
           </div>

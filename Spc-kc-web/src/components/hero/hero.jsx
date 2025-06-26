@@ -32,8 +32,7 @@ export default function Hero() {
             IEEE<span>SPS Kerala Chapter</span>
           </h1>
           <p>
-            The Signal Processing Society, founded as IEEE’s first society in
-            1948
+            Connecting Signal Minds Across the Globe
           </p>
           <button className="join-btn">
             <a

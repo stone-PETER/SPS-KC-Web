@@ -13,6 +13,7 @@ import Newsletter from "./components/Newsletter/newsletter";
 import Team25 from "./components/Execom/team25";
 import Team22 from "./components/Execom/team22";
 import Team21 from "./components/Execom/team21";
+import Sbc from "./components/Sbc/sbc";
 function App() {
   return (
     <Router>
@@ -33,8 +34,7 @@ function App() {
         <Route path="/execom-21" element={<Team21 />} />
         <Route path="/events" element={<AllEvents />} />
         <Route path="/newsletter" element={<Newsletter />} />
-
-
+        <Route path="/sbc" element={<Sbc />} />
       </Routes>
     </Router>
   );

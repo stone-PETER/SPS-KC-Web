@@ -10,6 +10,10 @@ footer
     justify-content: center;
     padding: 40px;
 }
+.icons
+{
+  color: white;
+}
 .footer img
 {
     height: 160px;
@@ -35,6 +39,16 @@ footer
 .contacts .col
 {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+.contacts .col .icons
+{
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0 0 35px;
+  gap: 20px;
 }
 footer ul li
 {
@@ -42,9 +56,13 @@ footer ul li
     color: #ffffff;
     font-family: "Outfit", sans-serif;
     font-weight: 200;
+    line-height: 40px;
     font-size: 20px;
 }
-
+footer ul li p
+{
+  line-height: 25px;
+}
 .main-footer {
   margin-top: 2rem;
   padding: 1.5rem 0;

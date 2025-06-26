@@ -16,13 +16,13 @@ const Footer = () => {
           <div className="col">
             <img src="img/logo/sps kc png.png" alt="" />
             <div className="icons flex gap-4">
-  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com/ieeespskerala/about/" target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={faFacebook} className="text-2xl" />
   </a>
-  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.instagram.com/ieeespskerala/" target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
   </a>
-  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.linkedin.com/company/ieee-sps-kerala-chapter/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
   </a>
 </div>
@@ -38,6 +38,7 @@ const Footer = () => {
                 <li style={{ fontWeight: 400, marginBottom: 20 }}>Other Links</li>
                 <li><a href="https://www.ieee.org/">IEEE</a></li>
                 <li><a href="https://signalprocessingsociety.org/">Signal Processing Society</a></li>
+                <li><a href="https://ieeekerala.org/">IEEE Kerala Section</a></li>
             </ul>
             <ul className="contact">
               <li style={{ fontWeight: 400, marginBottom: 20 }}>Company</li>

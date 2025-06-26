@@ -13,7 +13,7 @@ import Newsletter from "./components/Newsletter/newsletter";
 import Team25 from "./components/Execom/team25";
 import Team22 from "./components/Execom/team22";
 import Team21 from "./components/Execom/team21";
-import Sbc from "./components/Sbc/sbc";
+import Sbc from "./components/SBC/sbc";
 import CounterSection from "./components/Counter/counter";
 function App() {
   return (

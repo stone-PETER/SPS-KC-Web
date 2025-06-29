@@ -61,25 +61,18 @@ const About = () => {
               <h2>IEEE SPS KC</h2>
               <p>
                 The IEEE Signal Processing Society (SPS) Kerala Chapter is a
-                lively, close-knit community, honored globally as the Best
-                Chapter of the Year among all IEEE SPS branches worldwide. Our
-                team includes 23 dedicated student leaders and 17 seasoned
-                professionals—three of them VOLT graduates—all working under the
-                guidance of an advisory body that brings clarity and direction
-                to our vision. Together, we shape every event with purpose and
-                creativity, striving to leave a genuine impact on this beautiful
-                world, driven by something so uniquely human. Our chapter’s
-                dedication is evident in the flourishing SPS student branches
-                across Kerala, where we build lasting connections and share
-                knowledge through regular collaborations. We’ve celebrated wins
-                in prestigious ICIP and ICASSP video-making competitions, and
-                some of our members are now part of the organizing team for
-                ICASSP 2025, reflecting a commitment that reaches far beyond our
-                region. Working hand in hand with other IEEE section chapters,
-                we are building a network that reaches from the grassroots of
-                Kerala to the world. Our chapter is more than a community—it’s a
-                place where ideas flourish, people engage, and every endeavor
-                holds a lasting purpose. Yes, that’s what we are: a family.
+                thriving, close-knit group that has been named Best Chapter of
+                the Year on a global scale. Our team, led by 23 motivated
+                student leaders and 17 professionals, including three VOLT
+                grads, thrives with the support of a devoted advisory board. We
+                plan meaningful activities, encourage collaboration among
+                Kerala's expanding SPS student clubs, and recognize
+                accomplishments such as winning ICIP and ICASSP video
+                competitions. With members now helping to arrange ICASSP 2025,
+                our influence has expanded well beyond the region. Together with
+                other IEEE chapters, we're creating a worldwide network based on
+                local enthusiasm. More than just a chapter, we're a family where
+                ideas thrive and every effort counts.
               </p>
             </div>
           </div>

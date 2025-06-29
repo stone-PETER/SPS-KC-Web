@@ -26,7 +26,10 @@ export default function Hero() {
 
   return (
     <section id="hero" className="main-hero">
+      
       <div className="hero" ref={heroRef}>
+      <video autoPlay muted loop className="background-video">
+        <source src="/vid/2.mp4" type="video/mp4" /></video>
         <div className="content">
           <h1>
             IEEE<span>SPS Kerala Chapter</span>

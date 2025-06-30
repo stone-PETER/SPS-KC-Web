@@ -13,8 +13,8 @@ export default function Hero() {
       let maxHeight = window.innerHeight;
 
       hero.style.opacity = 1 - scrollY / maxHeight;
-      hero.style.top = scrollY + "px";
-      hero.style.backgroundPositionY = -scrollY / 2 + "px";
+      // hero.style.top = scrollY + "px";
+      // hero.style.backgroundPositionY = -scrollY / 2 + "px";
     };
 
     window.addEventListener("scroll", handleScroll);

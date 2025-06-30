@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+public/vid/3.mov
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

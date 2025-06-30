@@ -26,7 +26,7 @@
 .divider
 {
     position: absolute;
-    /* bottom:-100px; */
+    bottom:-1px;
     left: 0px;
     min-width: 200%;
     /* height: 100px; */

@@ -15,6 +15,7 @@ import Team22 from "./components/Execom/team22";
 import Team21 from "./components/Execom/team21";
 import Sbc from "./components/SBC/sbc";
 import CounterSection from "./components/Counter/counter";
+import PricingPage from "./components/Pricing/pricing";
 function App() {
   return (
     <Router>
@@ -25,6 +26,7 @@ function App() {
             <Hero />
             <About />
             <CounterSection />
+            <PricingPage />
             <Event />
             <Footer />
           </>

@@ -69,24 +69,26 @@ import './counter.css';
             }, [hasAnimated]);
 
             return (
-                <div ref={sectionRef} className="bg-gray-100 py-16  counter-section">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                            <div className="p-6 bg-white rounded-lg shadow-lg">
-                                <h3 className="text-4xl font-bold text-blue-600">{counts.members.toLocaleString()}+</h3>
-                                <p className="mt-2 text-lg text-gray-600">Members</p>
-                            </div>
-                            <div className="p-6 bg-white rounded-lg shadow-lg">
-                                <h3 className="text-4xl font-bold text-blue-600">{counts.chapters.toLocaleString()}</h3>
-                                <p className="mt-2 text-lg text-gray-600">Chapters</p>
-                            </div>
-                            <div className="p-6 bg-white rounded-lg shadow-lg">
-                                <h3 className="text-4xl font-bold text-blue-600">{counts.awards.toLocaleString()}+</h3>
-                                <p className="mt-2 text-lg text-gray-600">Events</p>
-                            </div>
+              <div ref={sectionRef} className="counter-section">
+                    <div className="container">
+                        <div className="counter-grid">
+                        <div className="counter-card">
+                            <div className="circle-number">{counts.members.toLocaleString()}+</div>
+                            <p className="counter-label">Members</p>
+                        </div>
+                        <div className="counter-card">
+                            <div className="circle-number">{counts.chapters.toLocaleString()}</div>
+                            <p className="counter-label">Chapters</p>
+                        </div>
+                        <div className="counter-card">
+                            <div className="circle-number">{counts.awards.toLocaleString()}+</div>
+                            <p className="counter-label">Events</p>
+                        </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+
+
             );
         }
 export default CounterSection;

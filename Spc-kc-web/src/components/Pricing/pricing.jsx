@@ -1,6 +1,7 @@
 // PricingPage.jsx
 import React from "react";
 import "./pricing.css"; // Assuming you have a CSS file for styling
+import SectionTitle from "../sectionTitle"; // Import your SectionTitle component
 const plans = [
   {
     title: "Student",
@@ -26,7 +27,9 @@ const PricingPage = () => {
   return (
     <div className="pricing min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-6">Membership Plans</h2>
+        {/* <h2         className="text-4xl font-bold text-gray-800 mb-6">Membership Plans</h2> */}
+        <SectionTitle
+          title="Membership Plans"></SectionTitle>
         <p className="text-gray-600 mb-12">Choose a plan that suits your needs</p>
 
         <div className="grid gap-8 md:grid-cols-3">

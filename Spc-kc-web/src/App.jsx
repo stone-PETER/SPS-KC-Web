@@ -16,6 +16,7 @@ import Team21 from "./components/Execom/team21";
 import Sbc from "./components/SBC/sbc";
 import CounterSection from "./components/Counter/counter";
 import PricingPage from "./components/Pricing/pricing";
+import Awards from "./components/Awards/award";
 function App() {
   return (
     <Router>
@@ -39,6 +40,14 @@ function App() {
         <Route path="/events" element={<AllEvents />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sbc" element={<Sbc />} />
+        <Route
+          path="/awards"
+          element={
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-inter text-gray-800 p-4 sm:p-8">
+              <Awards />
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );

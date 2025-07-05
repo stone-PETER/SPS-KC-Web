@@ -25,7 +25,7 @@ const plans = [
 
 const PricingPage = () => {
   return (
-    <div className="pricing min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="pricing  bg-gray-50 py-12 px-4 sm:px-5 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         {/* <h2         className="text-4xl font-bold text-gray-800 mb-6">Membership Plans</h2> */}
         <SectionTitle

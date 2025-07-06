@@ -17,6 +17,7 @@ import Sbc from "./components/SBC/sbc";
 import CounterSection from "./components/Counter/counter";
 import PricingPage from "./components/Pricing/pricing";
 import Awards from "./components/Awards/award";
+import Announcements from "./components/announcements/announcements";
 function App() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
           <>
             <Hero />
             <About />
+            <Announcements/>
             <CounterSection />
             <PricingPage />
             <Event />

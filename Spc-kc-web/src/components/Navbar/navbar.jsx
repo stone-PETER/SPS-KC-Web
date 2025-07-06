@@ -56,6 +56,9 @@ export default function Navbar() {
         <li>
           <Link to="/sbc">SBC</Link>
         </li>
+        <li>
+          <Link to="/awards">Awards</Link>
+        </li>
       </ul>
     </nav>
   );

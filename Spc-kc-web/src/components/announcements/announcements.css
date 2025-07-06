@@ -1,0 +1,38 @@
+.announcements-section {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background: #000000;
+  color: white;
+  border-radius: 8px;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.announcements-vertical {
+  overflow: hidden;
+  height: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vertical-list {
+  display: flex;
+  flex-direction: column;
+}
+.announcement-item {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #1a237e;
+  transition: color 0.3s;
+}
+.no-announcements {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+}

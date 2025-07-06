@@ -6,7 +6,8 @@ import { client } from "../../sanity/client";
 const ANNOUNCEMENTS_QUERY = `*[_type == "announcement" && active == true && start <= now() && end >= now()]|order(start desc){
   _id,
   title,
-  message
+  message,
+  link
 }`;
 
 export default function Announcements() {
@@ -49,11 +50,23 @@ export default function Announcements() {
               transition: "transform 0.5s",
             }}
           >
-            {announcements.map((a, i) => (
-              <div key={a._id} className="announcement-item">
-                <strong>{a.title}</strong>: {a.message}
-              </div>
-            ))}
+            {announcements.map((a, i) =>
+              a.link ? (
+                <a
+                  key={a._id}
+                  href={a.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="announcement-item announcement-link"
+                >
+                  <strong>{a.title}</strong>: {a.message}
+                </a>
+              ) : (
+                <div key={a._id} className="announcement-item">
+                  <strong>{a.title}</strong>: {a.message}
+                </div>
+              )
+            )}
           </div>
         )}
       </div>

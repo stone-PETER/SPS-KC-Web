@@ -18,6 +18,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'link',
+      title: 'Link',
+      type: 'url',
+      description: 'Optional: Add a URL for more info or registration.',
+    }),
+    defineField({
       name: 'start',
       title: 'Start Date/Time',
       type: 'datetime',

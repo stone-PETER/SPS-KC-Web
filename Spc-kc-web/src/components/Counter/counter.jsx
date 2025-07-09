@@ -39,7 +39,7 @@ import './counter.css';
                 if (!hasAnimated) return;
 
                 const targetCounts = {
-                    members: 500,
+                    members: 1156,
                     chapters: 34,
                     awards: 30
                 };
@@ -55,7 +55,7 @@ import './counter.css';
                 const interval = setInterval(() => {
                     currentStep++;
                     setCounts(prev => ({
-                        members: Math.min(Math.round(prev.members + increment.members), targetCounts.members),
+                        members: (Math.round(prev.members + increment.members), targetCounts.members),
                         chapters: Math.min(Math.round(prev.chapters + increment.chapters), targetCounts.chapters),
                         awards: Math.min(Math.round(prev.awards + increment.awards), targetCounts.awards)
                     }));

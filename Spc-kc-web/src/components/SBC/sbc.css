@@ -1,6 +1,12 @@
+.sbc-list
+{
+    position: relative;
+    top: 150px;
+}
 .sbc-list .column
 {
     background-color: #000F2A;
+    color: white;
 }
 .sbc-list .rows
 {

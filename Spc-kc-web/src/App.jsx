@@ -18,6 +18,7 @@ import CounterSection from "./components/Counter/counter";
 import PricingPage from "./components/Pricing/pricing";
 import Awards from "./components/Awards/award";
 import Announcements from "./components/announcements/announcements";
+import Achievements from "./components/Awards/achievements";
 function App() {
   return (
     <Router>
@@ -29,7 +30,7 @@ function App() {
             <About />
             <Announcements/>
             <CounterSection />
-            <PricingPage />
+            {/* <PricingPage /> */}
             <Event />
             <Footer />
           </>
@@ -47,6 +48,14 @@ function App() {
           element={
             <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-inter text-gray-800 p-4 sm:p-8">
               <Awards />
+            </div>
+          }
+        />
+        <Route
+          path="/achievements"
+          element={
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-inter text-gray-800 p-4 sm:p-8">
+              <Achievements />
             </div>
           }
         />

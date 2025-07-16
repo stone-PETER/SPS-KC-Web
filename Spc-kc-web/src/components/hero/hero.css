@@ -7,13 +7,13 @@
 
 .hero {
   position: fixed;
-  padding-top: 60px;
+  /* padding-top: 60px; */
   z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   /* background-image: url("/img/IEEE-SPS-EXECOM-1-scaled.jpeg"); */
   background-repeat: no-repeat;
@@ -26,7 +26,7 @@
 .divider
 {
     position: absolute;
-    bottom:-1px;
+    bottom:-30px;
     left: 0px;
     min-width: 200%;
     /* height: 100px; */
@@ -110,7 +110,7 @@
   font-size: 6rem;
   font-family: "Outfit", sans-serif;
   font-weight: 500;
-  color: #007a78;
+  color: #fafafa;
 }
 
 .hero .content span {

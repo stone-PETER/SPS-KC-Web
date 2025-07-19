@@ -36,7 +36,9 @@ export default function AllEvents() {
 
   return (
     <main className="container mx-auto p-8">
-      <h2 className="text-2xl font-bold mb-4">All Event Posters</h2>
+    <h1 className="text-4xl p-10 sm:text-5xl text-center font-extrabold text-blue-800 mb-4 tracking-tight">
+      All Posters
+        </h1>
       <div
         style={{
           display: "grid",

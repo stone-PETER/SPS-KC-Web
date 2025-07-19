@@ -53,10 +53,10 @@ function Awards() {
       {/* Section Header */}
       <div className="text-center mb-10" style={{ marginTop: "150px" }}>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 tracking-tight">
-          Our Awards
+          IEEE SPS Kerala Chapter Awards
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Highlighting the distinguished accomplishments and contributions of
+          Highlighting the distinguished contributions of
           our IEEE student chapter and its members.
         </p>
       </div>

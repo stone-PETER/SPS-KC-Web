@@ -9,21 +9,74 @@ const urlFor = (source) =>
     ? imageUrlBuilder({ projectId, dataset }).image(source)
     : null;
 
-const OFFICE_BEARERS_QUERY = `*[_type == "officeBearer" && year == 2025 && defined(image.asset)]{
-  _id,
-  image,
-  professional,
-  role
-}`;
+function TeamGrid({ title, team }) {
+  return (
+    <div className="mx-auto px-20 p-5">
+      <h2 className="text-4xl text-center text-black font-bold mb-4 py-7">
+        {title}
+      </h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "2rem",
+        }}
+      >
+        {team.map((member) => {
+          const imageUrl =
+            member.image && member.image.asset
+              ? urlFor(member.image).url()
+              : null;
+          return (
+            <div
+              key={member._id}
+              style={{
+                borderRadius: "12px",
+                textAlign: "center",
+              }}
+            >
+              {imageUrl && (
+                <img
+                  src={imageUrl}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
-export default function Team25() {
+export default function PastTeam({ year }) {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await client.fetch(OFFICE_BEARERS_QUERY);
+        const data = await client.fetch(
+          `*[
+            _type == "officeBearer" &&
+            year == $year &&
+            defined(image.asset) &&
+            !(slug.current match "*-photo") &&
+            !(defined(image.asset->slug.current))
+          ] {
+            _id,
+            image,
+            professional,
+            role
+          }`,
+          { year }
+        );
         setMembers(data);
       } catch (err) {
         console.error("Sanity fetch error:", err);
@@ -32,7 +85,7 @@ export default function Team25() {
       }
     }
     fetchData();
-  }, []);
+  }, [year]);
 
   if (loading) return <div className="text-center p-8">Loading...</div>;
 
@@ -57,8 +110,11 @@ export default function Team25() {
   );
 
   return (
-    <main className="container mx-auto p-8">
-      <h2 className="text-4xl text-center text-black font-bold mb-4">
+    <main className="mx-auto px-20 py-10">
+      <h1 className="text-4xl text-center sm:text-5xl font-extrabold text-blue-800 mb-4 tracking-tight">
+        Meet the team of {year}
+      </h1>
+      {/* <h2 className="text-4xl text-center text-black font-bold mb-4">
         Professionals
       </h2>
       <div
@@ -96,8 +152,10 @@ export default function Team25() {
             </div>
           );
         })}
-      </div>
-      <h2 className="text-4xl text-center text-black font-bold mb-4 mt-12">
+      </div> */}
+      <TeamGrid title="Professional Team" team={professionals} />
+      <TeamGrid title="Student Team" team={nonProfessionals} />
+      {/* <h2 className="text-4xl text-center text-black font-bold mb-4 mt-12">
         Student Team
       </h2>
       <div
@@ -135,7 +193,7 @@ export default function Team25() {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </main>
   );
 }

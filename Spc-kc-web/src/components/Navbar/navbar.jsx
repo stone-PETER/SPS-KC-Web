@@ -59,6 +59,9 @@ export default function Navbar() {
         <li>
           <Link to="/awards">Awards</Link>
         </li>
+        <li>
+          <Link to="/achievements">Achievements</Link>
+        </li>
       </ul>
     </nav>
   );

@@ -32,7 +32,7 @@ export default function Hero() {
         </video>
         <div className="content">
           <h1>
-            IEEE<span>SPS Kerala Chapter</span>
+            IEEE SPS Kerala Chapter
           </h1>
           <p>Connecting Signal Minds Across the Globe</p>
           <button className="join-btn">

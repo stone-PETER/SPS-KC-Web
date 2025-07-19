@@ -4,6 +4,8 @@
   line-height: 1.5;
   font-weight: 400;
   overflow-x: hidden;
+  width:100vw;
+  max-width: 100%;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

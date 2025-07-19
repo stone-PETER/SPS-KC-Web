@@ -25,7 +25,7 @@ const About = () => {
             class="shape-fill"
           ></path>
         </svg> */}
-      <div className="container p-10">
+      <div className="container p-10 flex flex-col items-center justify-center">
         <SectionTitle title="About" />
         <div className="row flex flex-col md:flex-row items-center h-56 md:h-64 gap-6 ">
           <img

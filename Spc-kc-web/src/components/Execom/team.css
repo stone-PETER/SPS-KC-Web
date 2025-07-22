@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 10%;
 }
 .slt {
   margin-top: 100px;
@@ -16,6 +18,7 @@
 }
 .slt h1 {
   font-family: "Outfit", sans-serif;
+  text-align: center;
   font-size: 64px;
 }
 .slt span {
@@ -53,10 +56,12 @@
 }
 .mem h3 {
   font-size: 32px;
+  text-align: center;
 }
 .mem p {
   font-size: 24px;
   color: #007a78;
+  text-align: center;
 }
 .mem img {
   margin-top: 30px;
@@ -65,4 +70,29 @@
   height: 220px; /* or any fixed height you want */
   object-fit: contain; /* or 'contain' if you want the whole image visible */
   border-radius: 12px;
+}
+@media screen and (max-width: 768px) {
+  .team {
+    flex-direction: column;
+  }
+  .slt {
+    width: 90%;
+  }
+  .types {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .types h3 {
+    font-size: 24px;
+  }
+  .members {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mem {
+    width: 100%;
+    max-width: 300px; /* Ensures a maximum width */
+  }
+  
 }

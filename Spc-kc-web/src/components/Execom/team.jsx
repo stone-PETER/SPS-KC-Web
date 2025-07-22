@@ -2,6 +2,7 @@ import "./team.css";
 import React, { useState, useEffect } from "react";
 import { client } from "../../sanity/client"; // Adjust path as needed
 import imageUrlBuilder from "@sanity/image-url";
+import { sortByRolePriority } from "./rolePriority";
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
@@ -17,11 +18,11 @@ export default function Team({ year }) {
     async function fetchData() {
       try {
         const data = await client.fetch(
-          `*[_type == "officeBearer" && year == $year && defined(image.asset)]{
+          `*[_type == "officeBearer" && year == $year && defined(image.asset) && slug.current match "*-photo"] {
             _id,
             image,
             professional,
-            name,
+            title,
             role
           }`,
           { year }
@@ -41,11 +42,15 @@ export default function Team({ year }) {
   }
 
   // Split members into student and professional
-  const studentTeam = members.filter(
-    (m) => m.professional === false || m.professional === "false"
+  const studentTeam = sortByRolePriority(
+    members.filter(
+      (m) => m.professional === false || m.professional === "false"
+    )
   );
-  const professionalBody = members.filter(
-    (m) => m.professional === true || m.professional === "true"
+  const professionalBody = sortByRolePriority(
+    members.filter(
+      (m) => m.professional === true || m.professional === "true"
+    )
   );
 
   let content;
@@ -60,7 +65,7 @@ export default function Team({ year }) {
           }
           alt="team member"
         />
-        <h3>{item.name}</h3>
+        <h3>{item.title}</h3>
         <p>{item.role}</p>
       </div>
     ));
@@ -75,7 +80,7 @@ export default function Team({ year }) {
           }
           alt="team member"
         />
-        <h3>{item.name}</h3>
+        <h3>{item.title}</h3>
         <p>{item.role}</p>
       </div>
     ));

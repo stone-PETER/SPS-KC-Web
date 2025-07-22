@@ -15,6 +15,7 @@ import Awards from "./components/Awards/award";
 import Announcements from "./components/announcements/announcements";
 import Achievements from "./components/Awards/achievements";
 import PastTeam from "./components/Execom/pastTeam";
+import Team from "./components/Execom/team";
 function App() {
   return (
     <Router>
@@ -31,7 +32,7 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/team" element={<PastTeam year={2025}/>} />
+        <Route path="/team" element={<Team year={2025}/>} />
         <Route path="/execom-23" element={<PastTeam year={2023} />} />
         <Route path="/execom-24" element={<PastTeam year={2024} />} />
         <Route path="/execom-22" element={<PastTeam year={2022} />} />

@@ -36,7 +36,7 @@
     /* background-image: url('/img/divider 1.svg');
     background-repeat: repeat-x; */
 }
-.wave1{
+/* .wave1{
   animation: slideIn 10s linear infinite;
 } 
 .wave2{
@@ -44,7 +44,7 @@
 }
 .wave3{
   animation: slideIn 15s linear infinite;
-}
+} */
 @keyframes slideIn {
   0% {
     transform: translatex(0);
@@ -53,22 +53,7 @@
     transform: translatex(-50%);
   }
 }
-@keyframes slideIn2 {
-  0% {
-    transform: translatex(0);
-  }
-  100% {  
-    transform: translatex(-50%);
-  }
-}
-@keyframes slideIn3 {
-  0% {
-    transform: translatex(0);
-  }
-  100% {  
-    transform: translatex(-50%);
-  }
-}
+
 
 .background-video {
   position: fixed;

@@ -10,7 +10,7 @@ function urlFor(source) {
 }
 
 export default function Team({ year }) {
-  const [items, setItems] = useState(0); // 0: Student Team, 1: Professional Body
+  const [items, setItems] = useState(1); // 0: Student Team, 1: Professional Body
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 

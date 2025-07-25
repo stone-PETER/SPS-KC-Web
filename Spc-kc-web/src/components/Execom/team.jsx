@@ -93,16 +93,6 @@ export default function Team({ year }) {
           <span>Meet the</span> Team
         </h1>
         <div className="types">
-          <button onClick={() => setItems(0)}>
-            <h3
-              style={{
-                backgroundColor: items === 0 ? "#001E40" : "#ffff",
-                color: items === 0 ? "#ffff" : "black",
-              }}
-            >
-              Student Team
-            </h3>
-          </button>
           <button onClick={() => setItems(1)}>
             <h3
               style={{
@@ -111,6 +101,16 @@ export default function Team({ year }) {
               }}
             >
               Professional Body
+            </h3>
+          </button>
+          <button onClick={() => setItems(0)}>
+            <h3
+              style={{
+                backgroundColor: items === 0 ? "#001E40" : "#ffff",
+                color: items === 0 ? "#ffff" : "black",
+              }}
+            >
+              Student Team
             </h3>
           </button>
         </div>

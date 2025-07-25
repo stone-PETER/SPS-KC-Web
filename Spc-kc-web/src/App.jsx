@@ -24,8 +24,9 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
+            {/* <Announcements/> */}
             <About />
-            <Announcements/>
+            
             <CounterSection />
             {/* <PricingPage /> */}
             <Event />

@@ -6,6 +6,27 @@ import Slider from "react-slick";
 import { client } from "../../sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
+// Custom arrow components
+const CustomPrevArrow = ({ onClick }) => (
+  <button
+    className="custom-prev-arrow"
+    onClick={onClick}
+    aria-label="Previous event"
+  >
+    ‹
+  </button>
+);
+
+const CustomNextArrow = ({ onClick }) => (
+  <button
+    className="custom-next-arrow"
+    onClick={onClick}
+    aria-label="Next event"
+  >
+    ›
+  </button>
+);
+
 const { projectId, dataset } = client.config();
 const urlFor = (source) =>
   projectId && dataset
@@ -43,6 +64,8 @@ export default function Event() {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1624,

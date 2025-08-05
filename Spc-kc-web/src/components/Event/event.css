@@ -49,6 +49,50 @@
 @media (max-width: 1120px) {
 }
 
+/* Custom navigation arrows */
+.custom-prev-arrow,
+.custom-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #1a237e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-prev-arrow {
+  left: -25px;
+}
+
+.custom-next-arrow {
+  right: -25px;
+}
+
+.custom-prev-arrow:hover,
+.custom-next-arrow:hover {
+  background: #303f9f;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.custom-prev-arrow:active,
+.custom-next-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
 @media (max-width: 768px) {
   .card-body {
     width: 300px;
@@ -64,6 +108,30 @@
   .event-title {
     font-size: 2.5rem;
   }
+  .custom-prev-arrow,
+.custom-next-arrow {
+opacity: 0.5;
+  height: 30px;
+  width: 30px;
+  }
+  .custom-prev-arrow {
+  left: -15px;
+}
+
+.custom-next-arrow {
+  right: -15px;
+}
+}
+
+  .custom-prev-arrow:hover,
+  .custom-next-arrow:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .custom-prev-arrow:active,
+  .custom-next-arrow:active {
+    transform: translateY(-50%) scale(0.9);
 }
 
 @media (max-width: 480px) {

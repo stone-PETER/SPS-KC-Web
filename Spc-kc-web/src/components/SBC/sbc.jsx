@@ -15,7 +15,7 @@ const Sbclist = () => {
     { name: "College of Engg - Karunagappally,PHO/MIT/SSC/SP", formedDate: "6/22/2020", memberCount: "65" },
     { name: "College of Engineering-Attingal,SP01", formedDate: "2/24/2023", memberCount: "64" },
     { name: "Jyothi Engineering College - Thrissur,SP01", formedDate: "8/9/2024", memberCount: "60" },
-    { name: "Mar Baselios Inst of Tech & Sci,SP01", formedDate: "3/21/2023", memberCount: "56" },
+    { name: "Mar Baselios Inst of Tech & Sci,SP01", formedDate: "3/21/2023", memberCount: "64" },
     { name: "Mar Athanasius College of Eng,SP01", formedDate: "1/27/2023", memberCount: "43" },
     { name: "Sree Buddha College of Engineering,SP01", formedDate: "12/30/2024", memberCount: "43" },
     { name: "Muslim Assoc Coll of Eng Venjaramood,SP01", formedDate: "3/8/2023", memberCount: "42" },

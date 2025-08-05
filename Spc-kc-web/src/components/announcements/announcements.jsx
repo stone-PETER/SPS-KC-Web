@@ -36,39 +36,40 @@ export default function Announcements() {
     }
   }, [announcements]);
 
+  // Don't render the section if there are no announcements
+  if (announcements.length === 0) {
+    return null;
+  }
+
   return (
     <section className="announcements-section">
       <h2 className="section-title">Announcements</h2>
       <div className="announcements-vertical">
-        {announcements.length === 0 ? (
-          <div className="no-announcements">No new announcements.</div>
-        ) : (
-          <div
-            className="vertical-list"
-            style={{
-              transform: `translateY(-${index * 2.5}rem)`,
-              transition: "transform 0.5s",
-            }}
-          >
-            {announcements.map((a, i) =>
-              a.link ? (
-                <a
-                  key={a._id}
-                  href={a.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="announcement-item announcement-link"
-                >
-                  <strong>{a.title}</strong>: {a.message}
-                </a>
-              ) : (
-                <div key={a._id} className="announcement-item">
-                  <strong>{a.title}</strong>: {a.message}
-                </div>
-              )
-            )}
-          </div>
-        )}
+        <div
+          className="vertical-list"
+          style={{
+            transform: `translateY(-${index * 2.5}rem)`,
+            transition: "transform 0.5s",
+          }}
+        >
+          {announcements.map((a, i) =>
+            a.link ? (
+              <a
+                key={a._id}
+                href={a.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="announcement-item announcement-link"
+              >
+                <strong>{a.title}</strong>: {a.message}
+              </a>
+            ) : (
+              <div key={a._id} className="announcement-item">
+                <strong>{a.title}</strong>: {a.message}
+              </div>
+            )
+          )}
+        </div>
       </div>
     </section>
   );

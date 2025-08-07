@@ -11,45 +11,47 @@ const urlFor = (source) =>
 
 function TeamGrid({ title, team }) {
   return (
-    <div className="mx-auto px-20 p-5">
-      <h2 className="text-4xl text-center text-black font-bold mb-4 py-7">
-        {title}
-      </h2>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "2rem",
-        }}
-      >
-        {team.map((member) => {
-          const imageUrl =
-            member.image && member.image.asset
-              ? urlFor(member.image).url()
-              : null;
-          return (
-            <div
-              key={member._id}
-              style={{
-                borderRadius: "12px",
-                textAlign: "center",
-              }}
-            >
-              {imageUrl && (
-                <img
-                  src={imageUrl}
-                  alt=""
-                  style={{
-                    borderRadius: "12px",
-                    width: "100%",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              )}
-            </div>
-          );
-        })}
+    <div className="mx-auto flex align-middle justify-center px-20 p-5">
+      <div>
+        <h2 className="text-4xl text-center text-black font-bold mb-4 py-7">
+          {title}
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "2rem",
+          }}
+        >
+          {team.map((member) => {
+            const imageUrl =
+              member.image && member.image.asset
+                ? urlFor(member.image).url()
+                : null;
+            return (
+              <div
+                key={member._id}
+                style={{
+                  borderRadius: "12px",
+                  textAlign: "center",
+                }}
+              >
+                {imageUrl && (
+                  <img
+                    src={imageUrl}
+                    alt=""
+                    style={{
+                      borderRadius: "12px",
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

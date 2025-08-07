@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation();
+
   useEffect(() => {
     const menuIcon = document.getElementById("menu-icon");
     const navLinks = document.getElementById("nav-links");
@@ -17,6 +19,14 @@ export default function Navbar() {
       if (menuIcon) menuIcon.onclick = null;
     };
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    const navLinks = document.getElementById("nav-links");
+    if (navLinks) {
+      navLinks.style.display = "";
+    }
+  }, [location]);
 
   return (
     <nav className="navbar">

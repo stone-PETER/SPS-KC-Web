@@ -8,6 +8,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { SITE_CONFIG } from "../../config/siteConfig";
 
 const Footer = () => {
   return (
@@ -15,38 +16,38 @@ const Footer = () => {
       <div className="container">
         <div className="contacts">
           <div className="col">
-            <img src="img/logo/sps kc png.png" alt="" />
+            <img src={SITE_CONFIG.LOGO_PATH} alt="" />
             <div className="icons flex gap-4">
               <a
-                href="https://www.facebook.com/ieeespskerala/about/"
+                href={SITE_CONFIG.SOCIAL_LINKS.FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faFacebook} className="text-2xl" />
               </a>
               <a
-                href="https://www.instagram.com/ieeespskerala/"
+                href={SITE_CONFIG.SOCIAL_LINKS.INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
               </a>
               <a
-                href="https://www.linkedin.com/company/ieee-sps-kerala-chapter/posts/?feedView=all"
+                href={SITE_CONFIG.SOCIAL_LINKS.LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
               </a>
               <a
-                href="https://whatsapp.com/channel/0029VaeGcgh2gcLmPgW5WZ3t"
+                href={SITE_CONFIG.SOCIAL_LINKS.WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faWhatsapp} className="text-2xl" />
               </a>
               <a
-                href="https://discord.gg/your-discord-server"
+                href={SITE_CONFIG.SOCIAL_LINKS.DISCORD}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,18 +82,17 @@ const Footer = () => {
             </li>
           </ul>
           <ul className="contact">
-            <li style={{ fontWeight: 400, marginBottom: 20 }}>Company</li>
-            <li>ieeespskerala@gmail.com</li>
-            <li>+91 80756 13378</li>
+            <li style={{ fontWeight: 400, marginBottom: 20 }}>Contact</li>
+            <li>{SITE_CONFIG.CONTACT.EMAIL}</li>
+            <li>{SITE_CONFIG.CONTACT.PHONE}</li>
             <li>
               <p>
-                HarmonIEEE, 1st Floor,
+                {SITE_CONFIG.CONTACT.ADDRESS.STREET}
                 <br />
-                Cherian's Square,
-                <br /> Ambujavilasam Rd, PB77, GPO,
+                {SITE_CONFIG.CONTACT.ADDRESS.CITY}
                 <br />
-                Thiruvananthapuram,
-                <br /> Kerala 695001
+                {SITE_CONFIG.CONTACT.ADDRESS.STATE}{" "}
+                {SITE_CONFIG.CONTACT.ADDRESS.POSTAL_CODE}
               </p>
             </li>
             <li></li>
@@ -100,12 +100,12 @@ const Footer = () => {
         </div>
         <div className="main-footer">
           <p>
-            &copy; {new Date().getFullYear()} IEEE SPS Kerala Chapter. All
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.SITE_NAME}. All
             rights reserved.
           </p>
           <p>
             Designed and Developed by{" "}
-            <a href="/team">Sps KC Web Team</a>
+            <a href="/team">{SITE_CONFIG.SITE_NAME} Web Team</a>
           </p>
         </div>
       </div>

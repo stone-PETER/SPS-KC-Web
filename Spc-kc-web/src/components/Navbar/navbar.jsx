@@ -42,22 +42,36 @@ export default function Navbar() {
       </div>
       <ul className="nav-links" id="nav-links">
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/#about">About</a>
+          <Link to="/#about">About</Link>
         </li>
         <li className="dropdown">
-          <button className="dropbtn">
-            <a>Office Bearers</a>
+          <button
+            className="dropbtn"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>Office Bearers</span>
             <span className="arrow">&#9662;</span>
           </button>
-          <div className="dropdown-content">
-            <Link to="/team">Present Office Bearers</Link>
-            <Link to="/execom-24">Office Bearers 2024</Link>
-            <Link to="/execom-23">Office Bearers 2023</Link>
-            <Link to="/execom-22">Office Bearers 2022</Link>
-            <Link to="/execom-21">Office Bearers 2021</Link>
+          <div className="dropdown-content" role="menu">
+            <Link to="/team" role="menuitem">
+              Present Office Bearers
+            </Link>
+            <Link to="/execom-24" role="menuitem">
+              Office Bearers 2024
+            </Link>
+            <Link to="/execom-23" role="menuitem">
+              Office Bearers 2023
+            </Link>
+            <Link to="/execom-22" role="menuitem">
+              Office Bearers 2022
+            </Link>
+            <Link to="/execom-21" role="menuitem">
+              Office Bearers 2021
+            </Link>
           </div>
         </li>
         <li>

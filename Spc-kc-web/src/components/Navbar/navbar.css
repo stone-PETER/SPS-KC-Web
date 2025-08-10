@@ -97,6 +97,8 @@
 /* Dropdown button */
 .dropdown .dropbtn {
   background-color: inherit;
+font-weight: bold;
+
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }

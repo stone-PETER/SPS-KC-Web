@@ -4,7 +4,7 @@ import './counter.css';
             const [counts, setCounts] = React.useState({
                 members: 0,
                 chapters: 0,
-                awards: 0
+                events: 0
             });
             const [hasAnimated, setHasAnimated] = React.useState(false);
             const sectionRef = React.useRef(null);
@@ -41,14 +41,14 @@ import './counter.css';
                 const targetCounts = {
                     members: 1156,
                     chapters: 34,
-                    awards: 30
+                    events: 100
                 };
                 const duration = 2000; // Animation duration in ms
                 const steps = 60; // Number of animation steps
                 const increment = {
                     members: targetCounts.members / steps,
                     chapters: targetCounts.chapters / steps,
-                    awards: targetCounts.awards / steps
+                    events: targetCounts.events / steps
                 };
 
                 let currentStep = 0;
@@ -57,7 +57,7 @@ import './counter.css';
                     setCounts(prev => ({
                         members: (Math.round(prev.members + increment.members), targetCounts.members),
                         chapters: Math.min(Math.round(prev.chapters + increment.chapters), targetCounts.chapters),
-                        awards: Math.min(Math.round(prev.awards + increment.awards), targetCounts.awards)
+                        events: Math.min(Math.round(prev.events + increment.events), targetCounts.events)
                     }));
 
                     if (currentStep >= steps) {
@@ -81,7 +81,7 @@ import './counter.css';
                             <p className="counter-label">Chapters</p>
                         </div>
                         <div className="counter-card">
-                            <div className="circle-number">{counts.awards.toLocaleString()}+</div>
+                            <div className="circle-number">{counts.events.toLocaleString()}+</div>
                             <p className="counter-label">Events</p>
                         </div>
                         </div>

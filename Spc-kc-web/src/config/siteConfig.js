@@ -36,8 +36,8 @@ export const SITE_CONFIG = {
     FACEBOOK: "https://www.facebook.com/ieeespskerala",
     INSTAGRAM: "https://www.instagram.com/ieeespskerala",
     LINKEDIN: "https://www.linkedin.com/company/ieee-sps-kerala-chapter",
-    WHATSAPP: "https://whatsapp.com/channel/0029VaeGcgh2gcLmPgW5WZ3t",
-    DISCORD: "https://discord.gg/your-discord-server",
+    WHATSAPP: "https://whatsapp.com/channel/0029VaUBEMQKQuJFMXYUhJ0U",
+    DISCORD: "https://discord.gg/8YY6YaPU",
   },
 
   // Theme

@@ -1,15 +1,18 @@
 .announcements-section {
   margin-top: 2rem;
-  padding: 1rem 0;
+  padding: 1rem;
   background: #000F2A;
   color: white;
   border-radius: 8px;
 }
+
 .section-title {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
+
 .announcements-vertical {
   overflow: hidden;
   height: 2.5rem;
@@ -18,10 +21,13 @@
   flex-direction: column;
   align-items: center;
 }
+
 .vertical-list {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
+
 .announcement-item {
   height: 2.5rem;
   display: flex;
@@ -30,9 +36,83 @@
   font-size: 1.2rem;
   color: #ffffff;
   transition: color 0.3s;
+  padding: 0 1rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+.announcement-link {
+  text-decoration: none;
+}
+
+.announcement-link:hover {
+  color: #87CEEB;
+}
+
 .no-announcements {
   text-align: center;
   color: #f1f1f1;
   font-size: 1.1rem;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .announcements-section {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .announcement-item {
+    font-size: 1.1rem;
+    padding: 0 0.8rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .announcements-section {
+    margin-top: 1rem;
+    padding: 0.6rem;
+    border-radius: 6px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .announcements-vertical {
+    height: 3rem;
+  }
+  
+  .announcement-item {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  .vertical-list {
+    transform: translateY(-${index * 3}rem) !important;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .announcement-item {
+    font-size: 0.9rem;
+    padding: 0 0.3rem;
+  }
 }

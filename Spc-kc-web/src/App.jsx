@@ -35,8 +35,8 @@ function App() {
                   url={getFullUrl("/")}
                 />
                 <Hero />
-                {/* <Announcements/> */}
                 <About />
+                <Announcements />
 
                 <CounterSection />
                 {/* <PricingPage /> */}

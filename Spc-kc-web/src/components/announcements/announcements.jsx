@@ -19,7 +19,16 @@ export default function Announcements() {
     async function fetchAnnouncements() {
       try {
         const data = await client.fetch(ANNOUNCEMENTS_QUERY);
-        setAnnouncements(data);
+
+        // Add static announcement
+        const staticAnnouncement = {
+          _id: "celebration-10-years",
+          title: "Celebrating 10 Years 🎉",
+          message: "Thank you for being part of our journey!",
+          link: null,
+        };
+
+        setAnnouncements([staticAnnouncement, ...data]); // Show it on top
       } catch (err) {
         setAnnouncements([]);
       }
@@ -31,12 +40,11 @@ export default function Announcements() {
     if (announcements.length > 1) {
       intervalRef.current = setInterval(() => {
         setIndex((prev) => (prev + 1) % announcements.length);
-      }, 2500); // Change every 2.5s
+      }, 2500);
       return () => clearInterval(intervalRef.current);
     }
   }, [announcements]);
 
-  // Don't render the section if there are no announcements
   if (announcements.length === 0) {
     return null;
   }
@@ -52,7 +60,7 @@ export default function Announcements() {
             transition: "transform 0.5s",
           }}
         >
-          {announcements.map((a, i) =>
+          {announcements.map((a) =>
             a.link ? (
               <a
                 key={a._id}

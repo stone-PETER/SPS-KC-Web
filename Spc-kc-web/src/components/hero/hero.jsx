@@ -57,7 +57,7 @@ export default function Hero() {
           width: "100%",
         }}
       >
-        <Announcements />
+        
       </div>
     </section>
   );

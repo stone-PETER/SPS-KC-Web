@@ -100,9 +100,7 @@
     line-height: 1.2;
   }
   
-  .vertical-list {
-    transform: translateY(-${index * 3}rem) !important;
-  }
+  
 }
 
 /* Extra small mobile */

@@ -33,7 +33,7 @@ const urlFor = (source) =>
     ? imageUrlBuilder({ projectId, dataset }).image(source)
     : null;
 
-const EVENTS_QUERY = `*[_type == "event" && defined(image.asset)]|order(date desc)[0...5]{
+const EVENTS_QUERY = `*[_type == "event" && defined(image.asset)]|order(date desc)[0...8]{
   _id,
   image,
   date

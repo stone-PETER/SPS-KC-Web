@@ -87,7 +87,12 @@ const Footer = () => {
             <li>{SITE_CONFIG.CONTACT.PHONE}</li>
             <li>
               <p>
-                {SITE_CONFIG.CONTACT.ADDRESS.STREET}
+                {SITE_CONFIG.CONTACT.ADDRESS.STREET.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
                 <br />
                 {SITE_CONFIG.CONTACT.ADDRESS.CITY}
                 <br />

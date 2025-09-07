@@ -93,7 +93,7 @@ function App() {
                   description="Meet the office bearers and team members of IEEE SPS Kerala Chapter for 2022."
                   url={getFullUrl("/execom-22")}
                 />
-                <PastTeam year={2022} />
+                <Team year={2022} />
               </>
             }
           />

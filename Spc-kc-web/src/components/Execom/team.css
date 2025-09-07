@@ -71,6 +71,36 @@
   object-fit: contain; /* or 'contain' if you want the whole image visible */
   border-radius: 12px;
 }
+
+/* Large member styling when there are 1-2 members */
+.members-large {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* gap: 60px; */
+  /* padding: 0 5%; */
+  width:100%;
+}
+
+.mem-large {
+  width: 100%;
+  /* max-width: 800px; */
+  min-width: 400px;
+}
+
+.mem-large img {
+  height: auto;
+  min-width: 400px;
+  width: 100%;
+}
+
+.mem-large h3 {
+  display:none;
+}
+
+.mem-large p {
+  display:none;
+}
 @media screen and (max-width: 768px) {
   .team {
     flex-direction: column;
@@ -94,5 +124,29 @@
     width: 100%;
     max-width: 300px; /* Ensures a maximum width */
   }
-  
+
+  /* Mobile responsive for large members */
+  .members-large {
+    padding: 0 3%;
+    gap: 40px;
+  }
+
+  .mem-large {
+    width: 90vw;
+    max-width: 400px;
+    min-width: 280px;
+  }
+
+  .mem-large img {
+    height: 350px;
+    min-width: 280px;
+  }
+
+  .mem-large h3 {
+    font-size: 32px;
+  }
+
+  .mem-large p {
+    font-size: 26px;
+  }
 }

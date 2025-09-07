@@ -18,13 +18,16 @@ export default function Team({ year }) {
     async function fetchData() {
       try {
         const data = await client.fetch(
-          `*[_type == "officeBearer" && year == $year && defined(image.asset) && slug.current match "*-photo"] {
+          //here we are using -photo at the end of slug to differentiate individual photos from posters with 22 at the end of slug
+          //if you upload posters first and then use this page for individual photos either add 22 to the end of poster slugs or -photo to end of individual photo slugs
+
+          `*[_type == "officeBearer" && year == $year && defined(image.asset) && !(slug.current match "*22")] {
             _id,
             image,
             professional,
             title,
             role
-          }`,
+          }`, //(slug.current match "*-photo" ||
           { year }
         );
         setMembers(data);
@@ -48,15 +51,19 @@ export default function Team({ year }) {
     )
   );
   const professionalBody = sortByRolePriority(
-    members.filter(
-      (m) => m.professional === true || m.professional === "true"
-    )
+    members.filter((m) => m.professional === true || m.professional === "true")
   );
 
   let content;
+  const currentTeam = items === 0 ? studentTeam : professionalBody;
+  const teamSize = currentTeam.length;
+
   if (items === 0) {
     content = studentTeam.map((item, index) => (
-      <div className="mem" key={item._id || index}>
+      <div
+        className={`mem ${teamSize <= 2 ? "mem-large" : ""}`}
+        key={item._id || index}
+      >
         <img
           src={
             item.image && item.image.asset
@@ -71,7 +78,10 @@ export default function Team({ year }) {
     ));
   } else if (items === 1) {
     content = professionalBody.map((item, index) => (
-      <div className="mem" key={item._id || index}>
+      <div
+        className={`mem ${teamSize <= 2 ? "mem-large" : ""}`}
+        key={item._id || index}
+      >
         <img
           src={
             item.image && item.image.asset
@@ -114,7 +124,9 @@ export default function Team({ year }) {
             </h3>
           </button>
         </div>
-        <div className="members">{content}</div>
+        <div className={`members ${teamSize <= 2 ? "members-large" : ""}`}>
+          {content}
+        </div>
       </div>
     </div>
   );

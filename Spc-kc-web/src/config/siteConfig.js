@@ -22,8 +22,11 @@ export const SITE_CONFIG = {
     EMAIL: "ieeespskerala@gmail.com",
     PHONE: "+91-80756-13378",
     ADDRESS: {
-      STREET:
-        "HarmonIEEE, 1st Floor, Cherian's Square, Ambujavilasam Rd, PB77, GPO",
+      STREET: [
+              "HarmonIEEE, 1st Floor,",
+               "Cherian's Square",
+              "Ambujavilasam Rd, PB77, GPO"
+      ],    
       CITY: "Thiruvananthapuram",
       STATE: "Kerala",
       POSTAL_CODE: "695001",
@@ -37,7 +40,7 @@ export const SITE_CONFIG = {
     INSTAGRAM: "https://www.instagram.com/ieeespskerala",
     LINKEDIN: "https://www.linkedin.com/company/ieee-sps-kerala-chapter",
     WHATSAPP: "https://whatsapp.com/channel/0029VaUBEMQKQuJFMXYUhJ0U",
-    DISCORD: "https://discord.gg/8YY6YaPU",
+    DISCORD: "https://discord.gg/QqSerMFe",
   },
 
   // Theme

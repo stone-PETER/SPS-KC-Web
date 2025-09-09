@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./event.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,6 +42,7 @@ const EVENTS_QUERY = `*[_type == "event" && defined(image.asset)]|order(date des
 export default function Event() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const imageRefs = useRef({});
 
   useEffect(() => {
     async function fetchData() {
@@ -56,6 +57,32 @@ export default function Event() {
     }
     fetchData();
   }, []);
+
+  // Function to check if image needs shrinking
+  const checkImageAspectRatio = (imgElement) => {
+    if (imgElement && imgElement.complete) {
+      const aspectRatio = imgElement.naturalWidth / imgElement.naturalHeight;
+      console.log("Aspect ratio:", aspectRatio); // Debug log
+
+      // If image is very wide or very tall, add shrink class
+      if (aspectRatio <= 0.8 || aspectRatio >= 1.25) {
+        imgElement.classList.add("shrink");
+        console.log("Added shrink class"); // Debug log
+      } else {
+        imgElement.classList.remove("shrink");
+      }
+    }
+  };
+
+  const handleImageLoad = (e, eventId) => {
+    const img = e.target;
+    imageRefs.current[eventId] = img;
+
+    // Small delay to ensure image is fully loaded
+    setTimeout(() => {
+      checkImageAspectRatio(img);
+    }, 100);
+  };
 
   const settings = {
     dots: true,
@@ -110,7 +137,15 @@ export default function Event() {
               <div key={event._id || index} className="card">
                 <div className="card-body">
                   {imageUrl && (
-                    <img src={imageUrl} alt={`Event ${index + 1}`} />
+                    <img
+                      src={imageUrl}
+                      alt={`Event ${index + 1}`}
+                      onLoad={(e) => handleImageLoad(e, event._id)}
+                      onError={(e) => {
+                        console.log("Image load error");
+                        e.target.style.display = "none";
+                      }}
+                    />
                   )}
                 </div>
               </div>

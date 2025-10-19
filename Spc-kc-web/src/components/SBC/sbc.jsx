@@ -11,7 +11,7 @@ const TableRow = ({ name, memberCount, formedDate }) => (
 
 const Sbclist = () => {
   const data = [
-    { name: "Mar Baselios Inst of Tech & Sci,SP01", formedDate: "3/21/2023", memberCount: "89" },
+    { name: "Mar Baselios Inst of Tech & Sci,SP01", formedDate: "3/21/2023", memberCount: "97" },
     { name: "Chenganur College of Engineering,SP01", formedDate: "4/21/2024", memberCount: "80" },
     { name: "College of Engg - Karunagappally,PHO/MIT/SSC/SP", formedDate: "6/22/2020", memberCount: "65" },
     { name: "College of Engineering-Attingal,SP01", formedDate: "2/24/2023", memberCount: "64" },

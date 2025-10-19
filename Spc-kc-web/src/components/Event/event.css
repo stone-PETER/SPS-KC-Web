@@ -23,7 +23,7 @@
   align-items: center;
   padding: 1.5rem;
   width: 500px;
-  height: 500px;
+  /* height: 500px; */
 }
 
 .card-body {
@@ -42,7 +42,7 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Slick carousel dots */
@@ -95,7 +95,7 @@
 @media (max-width: 480px) {
   .card {
     width: 300px !important;
-    height: 300px !important;
+    /* height: 300px !important; */
     justify-content: center;
     align-items: center;
     padding: 0;
@@ -134,7 +134,7 @@
 @media (max-width: 360px) {
   .card {
     width: 240px !important;
-    height: 240px !important;
+    /* height: 240px !important; */
     justify-content: center;
     align-items: center;
     padding: 0;
